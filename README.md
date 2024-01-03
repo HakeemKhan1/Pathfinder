@@ -1,2 +1,2 @@
 # Pathfinding Visualizer
-### Check it out [LIVE](https://github.com/HakeemKhan1/Pathfinder.git). 
+### Check it out[LIVE](https://HakeemKhan1.github.io/Pathfinder/). 
