@@ -1,38 +1,37 @@
 body {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Baloo Bhaina 2', cursive;
-}
-button{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-a{
-    margin: 0px;
-    padding: 0px;
+button, a {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
 }
 
-#preloader{
-    background-color: #f1f2f3;
+#preloader {
+    background-color: #ffffff;
     position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    inset: 0;
     z-index: 999;
 }
 
-#status{
+#status {
     background-image: url("src/preloader.gif");
     background-repeat: no-repeat;
+    background-size: contain;
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 250px;
-    width: 286px;
-    margin-top: -125px;
-    margin-left: -143px;
+    height: 200px;
+    width: 200px;
+    transform: translate(-50%, -50%);
     z-index: 9999;
 }
 
@@ -40,192 +39,132 @@ a{
     position: relative;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
-.navBar{
-    height: 15vh;
+.navBar {
+    height: 60px;
+    background: #343a40;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
-.topBar{
-    width: 100%;
-    height: 45px;
-    padding-top: 5px;
-    background-color: #61DBFB;
+.topBar {
+    background-color: #4caf50;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.titleContent{
-    display: inline-block;
-    font-weight: normal;
-    color: rgb(0, 0, 0);
-    margin: -5px 5px 0px 5px;
-    float: left;
-    height: 40px;
-    padding: 0px;
-    font-size: 30px;
+.titleContent {
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+    margin-right: auto;
 }
 
 .butn {
-    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    padding: 6px 14px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.butn:hover {
+    background-color: #0056b3;
+}
+
+.guid {
     text-align: center;
-    text-decoration: none;
-    color: black;
-    font-size: 17px;
-    border: 0px;
-    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.guid li {
     display: inline-block;
-    width: 8%;
-    height: 30px;
-    float: left;
-    margin: 0px;
-    padding-top: 3px;
-    transition: all .2s ease-in-out;    
-}
-
-.butn:hover
-{
-    background-color: white;
-    color: #30475e;
-}
-
-.guid{
-    text-align: center;
-}
-
-.guid li{
-    margin: 0px 70px;
-    display: inline-block;
+    margin: 0 30px;
+    font-weight: 500;
 }
 
 .main {
-    position: absolute;
-    border-style: none;
-    height: 85vh;
-    width: 100vw;
-    top: 15vh;
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    overflow: auto;
 }
 
 .center {
-    margin: 0px auto;
-    padding: 0px 10px;
-    height: fit-content;
-    width: fit-content;
-    font-size: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
 }
 
 .unit {
-    display: inline-block;
-    border-style: solid;
-    border-color: rgb(19, 19, 20);
-    border-width: 1px 0px 0px 1px;
-    height: 19px;
-    width: 19px;
-    margin: 0px 0px 0px 0px;
-    position: static;
-    transition: all .2s ease-in-out;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    background-color: #e9ecef;
+    transition: all 0.3s ease;
 }
 
 .visited {
-    background-color: #61DBFB;
-    animation-name: visitedAnimation;
-    animation-duration: .7s;
-    transition: all .2s ease-in-out;
+    background-color: #17a2b8;
+    animation: visitedAnimation 0.7s forwards;
 }
 
-@keyframes visitedAnimation{
-    0%{
-        transform: scale(.3);
-        background-color: yellow;
-        border-radius: 100%;
-    }
-    25%{
-        transform: scale(.6);
-        background-color: #8feb1c;
-        border-radius: 50%;
-    }
-    50%{
-        background-color: #80d3cf;
-    }
-    75%{
-        transform: scale(1.2);
-        background-color: #509de6;
-    }
-    100%{
-        transform: scale(1.0);
-        background-color: #0779e4;
-    }
+@keyframes visitedAnimation {
+    0% { transform: scale(0.3); background-color: #ffc107; border-radius: 50%; }
+    50% { background-color: #28a745; }
+    100% { transform: scale(1); background-color: #17a2b8; }
 }
 
 .path {
-    background-color: yellow;
-    animation-name: pathAnimation;
-    animation-duration: .7s;
-    transition: all .2s ease-in-out;
+    background-color: #ffc107;
+    animation: pathAnimation 0.7s forwards;
 }
 
-@keyframes pathAnimation{
-    0%{
-        transform: scale(.3);
-        background-color: #7db538;
-        border-radius: 100%;
-    }
-    50%{
-        background-color: #83c92c;
-    }
-    75%{
-        transform: scale(1.2);
-        background-color: #a8ff3e;
-    }
-    100%{
-        transform: scale(1.0);
-        background-color: #8feb1c;
-    }
+@keyframes pathAnimation {
+    0% { transform: scale(0.3); background-color: #007bff; border-radius: 50%; }
+    50% { background-color: #6610f2; }
+    100% { transform: scale(1); background-color: #ffc107; }
 }
 
 .wall {
-    background-color: rgb(20, 19, 19);
-    animation-name: wallAnimation;
-    animation-duration: .7s;
+    background-color: #343a40;
+    animation: wallAnimation 0.6s forwards;
 }
 
-@keyframes wallAnimation{
-    0%{
-        transform: scale(.3);
-        background-color: rgb(20, 19, 19);
-    }
-    50%{
-        transform: scale(1.3);
-        background-color: rgb(20, 19, 19);
-    }
-    75%{
-        transform: scale(1.2);
-        background-color: rgb(20, 19, 19);
-    }
-    100%{
-        transform: scale(1.0);
-        background-color: rgb(20, 19, 19);
-    }
+@keyframes wallAnimation {
+    0% { transform: scale(0.3); }
+    100% { transform: scale(1); background-color: #343a40; }
 }
 
 .start {
-    background-color: blue;
-    transition: all .2s ease-in-out;
+    background-color: #28a745;
+    border: 2px solid #1e7e34;
 }
 
 .end {
-    background-color: red;
-    transition: all .2s ease-in-out;
+    background-color: #dc3545;
+    border: 2px solid #bd2130;
 }
 
-.bottomBorder{
-    border-width: 1px 0px 1px 1px;
+.bottomBorder {
+    border-bottom: 1px solid #ccc;
 }
 
-.rightBorder{
-    width: 18px;
-    border-width: 1px 1px 0px 1px;
+.rightBorder {
+    border-right: 1px solid #ccc;
 }
 
-.negativeMargin{
-    height: 18px;
-    margin-bottom: -3px;
+.negativeMargin {
+    margin-bottom: -2px;
 }
